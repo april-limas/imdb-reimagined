@@ -10,7 +10,9 @@
     <div class="poster-container user-reviews-container">
         <div>
             {% if movie_api.poster_path %}
-                <img src="https://image.tmdb.org/t/p/w342{{movie_api.poster_path}}" alt="{{movie_api.title}}" width=250>
+                <a href="{% url 'movie_detail' movie_id=movie_api.id %}">
+                    <img src="https://image.tmdb.org/t/p/w342{{movie_api.poster_path}}" alt="{{movie_api.title}}" width=250>
+                </a>
             {% else %}
                 <img src="/images/default.png" width=220>
             {% endif %}

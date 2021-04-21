@@ -51,7 +51,7 @@
                     {% if favorite.poster_url %}
                         <div class="carousel-item">
                             {% if request.user.is_authenticated %}
-                                {% if favorite in request.user.watch_list %}
+                                {% if favorite in request.user.watch_list.all %}
                                     <a href="{% url 'remove_watchlist' tmdb_id=favorite.tmdb_id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                                 {% else %}
                                     <a href="{% url 'add_watchlist' tmdb_id=favorite.tmdb_id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
@@ -91,7 +91,7 @@
                 {% for result in recommendations.results %}
                     <div class="carousel-item">
                         {% if request.user.is_authenticated %}
-                            {% if result in request.user.watch_list %}
+                            {% if result in request.user.watch_list.all %}
                                 <a href="{% url 'remove_watchlist' tmdb_id=result.id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                             {% else %}
                                 <a href="{% url 'add_watchlist' tmdb_id=result.id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
@@ -125,7 +125,7 @@
             {% for result in popular.results %}
                 <div class="carousel-item">
                     {% if request.user.is_authenticated %}
-                        {% if result in request.user.watch_list %}
+                        {% if result in request.user.watch_list.all %}
                             <a href="{% url 'remove_watchlist' tmdb_id=result.id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                         {% else %}
                             <a href="{% url 'add_watchlist' tmdb_id=result.id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
@@ -162,7 +162,7 @@
             {% for result in latest.results %}
                 <div class="carousel-item">
                     {% if request.user.is_authenticated %}
-                        {% if result in request.user.watch_list %}
+                        {% if result in request.user.watch_list.all %}
                             <a href="{% url 'remove_watchlist' tmdb_id=result.id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                         {% else %}
                             <a href="{% url 'add_watchlist' tmdb_id=result.id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
@@ -199,7 +199,7 @@
             {% for result in top.results %}
                 <div class="carousel-item">
                     {% if request.user.is_authenticated %}
-                        {% if result in request.user.watch_list %}
+                        {% if result in request.user.watch_list.all %}
                             <a href="{% url 'remove_watchlist' tmdb_id=result.id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                         {% else %}
                             <a href="{% url 'add_watchlist' tmdb_id=result.id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
@@ -236,7 +236,7 @@
             {% for result in upcoming.results %}
                 <div class="carousel-item">
                     {% if request.user.is_authenticated %}
-                        {% if result in request.user.watch_list %}
+                        {% if result in request.user.watch_list.all %}
                             <a href="{% url 'remove_watchlist' tmdb_id=result.id %}" class="icon" data-remove-watchlist="Remove from Watchlist"><i class="far fa-check-square"></i></a>
                         {% else %}
                             <a href="{% url 'add_watchlist' tmdb_id=result.id %}" class="icon" data-add-watchlist="Add to Watchlist"><i class="far fa-plus-square"></i></a>
