@@ -260,7 +260,7 @@
         {% endfor %}
         <a href="#" onclick="followUser()" class="more-bio">Close</a>
     </div>
-{% endblock %}
+{% endblock %} 
 
 {% block unfollow %}
     <div class="bio-scroll" style="width: 170px;">
@@ -270,8 +270,8 @@
                     <a href="{% url 'profile' user_id=user.id %}"><img class="profile-image" src ='{{user.profile_pic.url}}'/></a>
                 </div>
             {% endif %}
-            <h6 class="profile-info" style="display: inline-block; position:relative; bottom: 30px; left: 10px;"><a href="{% url 'profile' user_id=user.id %}">{{user.displayname}}</a></h6>
             <br>
+            <h6 class="profile-info" style="display: inline-block; position:relative; bottom: 30px; left: 10px;"><a href="{% url 'profile' user_id=user.id %}">{{user.displayname}}</a></h6>
         {% endfor %}
         <a href="#" onclick="unfollowUser()" class="more-bio">Close</a>
     </div>
